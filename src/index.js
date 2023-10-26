@@ -5,7 +5,7 @@ import './styles/App.css';
 import registerServiceWorker from './registerServiceWorker';
 //import React Router
 import {BrowserRouter,
-        Routes,
+       Switch,
         Route }
   from 'react-router-dom';
 //import Components
@@ -20,11 +20,13 @@ import BaseLayout from './components/Layout';
 ReactDOM.render(
   <BrowserRouter>
     <BaseLayout>
+        <Switch>
         <Route exact path="/" component={Explorer}/>
         <Route path="/starships" component={Starships}/>
         <Route path="/films" component={Films}/>
         <Route path="/people" component={People}/>
         <Route path="/details/:endpoint/:id" component={Details}/>
+        </Switch>
   </BaseLayout>
   </BrowserRouter>
 
